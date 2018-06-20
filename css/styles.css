@@ -1,0 +1,325 @@
+.item {
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: 4;
+}
+
+body {
+  color: #FFF;
+  font-family: "Source Sans Pro",sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #FFF;
+  text-align: center;
+  display: inline-block;
+  padding: 5%;
+  font-family: "Source Sans Pro",sans-serif;
+  font-weight: bolder;
+  font-size: 7em;
+  font-weight:200;
+}
+
+#intro-photo {
+  background-image: url("../img/escape-2-resized.jpg");
+  background-size: cover;
+}
+
+section {
+  text-align: center;
+}
+
+#start-button {
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  border-color: #00b3b4;
+  border-width: thick;
+  display: inline-block;
+  font-size: 7em;
+  color: #FFF;
+  font-family: "Source Sans Pro",sans-serif;
+  text-decoration: none
+}
+
+#start-button:hover {
+  color: rgba(0,0,0,0.0);
+  background-image: url(../img/play-button-4.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.narrative {
+  background-image: url(../img/div-bg-2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10%;
+  font-size: 2em;
+  font-family: "Source Sans Pro",sans-serif;
+}
+
+#countdown {
+  position: fixed;
+  top: 0%;
+  right: 50%;
+  border: 5px solid red;
+  padding: 1%;
+  border-radius: 5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: red;
+}
+
+.hide-area {
+  display: none;
+}
+
+.continue {
+  float: right;
+  font-family:"Source Sans Pro",sans-serif;
+  color: #00b3b4;
+  font-weight: bolder;
+}
+
+.continue:hover {
+  cursor: pointer;
+}
+
+.message {
+  border: 5px double orange;
+  font-size: 2em;
+}
+
+.room {
+  text-align: center;
+}
+
+#room-one {
+  position: relative;
+  width: 1700px;
+  height: 1050px;
+}
+
+#board {
+  position: absolute;
+  top: 270px;
+  right: 615px;
+  width: 170px;
+  height: 250px;
+  /* border: 2px solid blue; */
+}
+
+#pc {
+  position: absolute;
+  top: 370px;
+  right: 1080px;
+  width: 140px;
+  height: 130px;
+  /* border: 2px solid blue; */
+}
+
+#clorox {
+  position: absolute;
+  top: 780px;
+  right:1120px;
+  width: 200px;
+  height: 250px;
+  /* border: 2px solid blue; */
+}
+
+.clickable:hover{
+  cursor: pointer;
+}
+
+.room-three {
+  background-image: url('../img/dungeon.jpg');
+  height: 100%;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  background-size: cover;
+  vertical-align: bottom;
+  font-size: 30px;
+  text-align: center;
+  padding: 25%;
+}
+
+/* //Hangman  */
+
+.hangman-buttons {
+  @include corners (5px);
+  text-decoration:none;
+  cursor:pointer;
+  font-size:1.5em;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border-color: #00b3b4;
+  border-style: solid;
+  border-width: thick;
+  background-color: rgba(0,0,0,0.1);
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  color: #FFF;
+}
+
+.hangman-buttons:hover {
+  color: #FFF;
+  border-color: #FFF;
+  border-style: solid;
+}
+
+/* Variabes */
+$orange: #ffa600;
+$green: #c1d72e;
+$blue: #82d2e5;
+$grey:#f3f3f3;
+$white: #fff;
+$base-color:$green ;
+
+/* Mixin's */
+
+@mixin transition {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin clear {
+  &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+}
+
+ @mixin box-size {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ @mixin transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin fade {
+  -moz-transition: all 1s ease-in;
+  -moz-transition:all 0.3s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+}
+
+@mixin opacity {
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  @include fade;
+}
+
+@mixin corners ($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  -khtml-border-radius: $radius;
+}
+
+.wrapper {
+  display: none;
+  font-family: "Source Sans Pro",sans-serif;
+  /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
+  height:100%;
+  text-align:center;
+  font-size:22px;
+  @include clear;
+  width:100%;
+  margin:0 auto;
+}
+
+canvas {
+  color:$white;
+  border: $white dashed 2px;
+  padding:15px;
+}
+
+#alphabet {
+  @include clear;
+  margin:15px auto;
+  padding:0;
+  max-width:900px;
+}
+
+#alphabet li {
+  float:left;
+  margin: 0 10px 10px 0;
+  list-style:none;
+  width:35px;
+  height:30px;
+  padding-top:10px;
+  background:$white;
+  color:$base-color;
+  cursor:pointer;
+  @include corners(5px);
+  border: solid 1px $white;
+
+    &:hover{
+      background:$base-color;
+      border: solid 1px $white;
+      color:$white;
+    }
+}
+
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display:block;
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size:1.6em;
+}
+
+.active {
+  @include opacity;
+  cursor:default;
+
+  &:hover{
+      @include fade;
+      @include opacity;
+    }
+}
+
+#mylives{
+  font-size:1.6em;
+  text-align:center;
+  display:block;
+}
+
+@media (max-width: 767px) {
+  #alphabet {
+  padding:0 0 0 15px;
+}
+  }
+
+  @media (max-width: 480px) {
+  #alphabet {
+  padding:0 0 0 25px;
+}
+  }
+  .initial-hide {
+    display: none;
+  }

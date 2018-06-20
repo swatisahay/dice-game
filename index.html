@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Escape Room</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <section id="intro-photo">
+      <div class="item animated flash">
+        <h1>Escape From Epicodus</h1>
+      </div>
+      <button onclick="startGame(event)" id="start-button">E</button>
+    </section>
+
+    <div class="narrative hide-area" id="narrative-one">
+      <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
+      <p>Suddenly screeching sounds surronds you.</p>
+      <p>It draws closer and closer to you.</p>
+      <span class="continue" onclick="toRoomOne(event)">Continue...</span>
+    </div>
+    <div id="room-one" class="hide-area room">
+      <div class="countdown-clock">
+        <p id="countdown"></p>
+      </div>
+      <div class="row">
+        <div class="clickable" id="board" onclick="clickBoard()"></div>
+        <div class="clickable" id="pc" onclick="clickPC()"></div>
+        <div class="clickable hide-area" id="clorox" onclick="clickClorox()"></div>
+        <!-- <div onclick="showCoords1(event)"> -->
+          <img src="img/computer3-resized.jpg">
+        <!-- </div> -->
+      </div>
+      <span id="rm-one-message" class="message hide-area"></span>
+      <form id="form-wifi" class="hide-area">
+        <input type="text" id="wifi">
+      </form>
+      <div id="email" class="hide-area">
+        <img src="img/email.png" alt="email">
+      </div>
+    </div>
+    <div class="narrative hide-area" id="narrative-two">
+      <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
+      <p>Suddenly screeching sounds surrounds you.</p>
+      <p>It draws closer and closer to you.</p>
+    </div>
+    <div id="room-two" class="hide-area">
+      <div onclick="showCoords1(event)"><img src="img/elevator-resized.jpg"></div>
+    </div>
+
+
+  <section class="room-three">
+    <h2>Your Final Chance</h2>
+    <p>The clock is ticking, solve and survive, fail and forever remain...</p>
+    <button id="start-hangman" onclick="startHangman()" class="hangman-buttons">E</button>
+  </section>
+  <br>
+    <div class="wrapper">
+        <div id="buttons">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p id="catagoryName"></p>
+        <div id="hold">
+        </div>
+        <p id="mylives"></p>
+        <p id="clue">Hang Loose or Hangman...</p>
+         <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+        <div class="container">
+          <button class="hangman-buttons" id="hint">Hint</button><button id="reset" class="hangman-buttons">Play again</button>
+          <br>
+          <!-- <br><button id="reset">Play again</button> -->
+        </div>
+        <br>
+        <br>
+        <div id="21">
+          <form id="game-input">
+            <h2>Play 21</h2>
+
+        <label for="dice">Number of dice</label>
+        <select class="form-control" id="dice">
+        <option value="0">None</option>
+        <option value="1">1</option>
+
+
+        </select>
+
+        <button type="submit" class="btn btn-success">Lets play!</button>
+        </form>
+
+        <div class="col-md-6">
+
+       <div id="reset">
+
+       
+        <div class="initial-hide">
+        <h3>Player 1</h3>
+        <h3>Total: <span id="player-one-total"></span></h3>
+        <div class="player-one">
+        <h3>Round Total: <span id= "player-one-round-total"></span></h3>
+
+        <button type="button" id="roll-player-one" class="btn btn-success">Roll!</button>
+        <button type="button" id="hold-player-one" class="btn btn-danger">Hold!</button>
+         <!-- <button type="reset" value="reload" class="btn btn-warning">Try again!</button> -->
+       </div>
+         <input type="button" onclick="myFunction()" value="try-again" class="btn btn-danger">
+        </div>
+        </div>
+
+        <div class="col-md-6">
+
+        <div class="initial-hide">
+        <h3>Player 2</h3>
+        <h3>Total: <span id="player-two-total"></span></h3>
+        <div class="player-two">
+        <h3>Round Total: <span id= "player-two-round-total"></span></h3>
+
+        <button type="button" id="roll-player-two" class="btn btn-success">Roll!</button>
+        <button type="button" id="hold-player-two" class="btn btn-danger">Hold!</button>
+        </div>
+        </div>
+        </div>
+        <p><span class="result"></span></p>
+
+       </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+  </body>
+</html>
